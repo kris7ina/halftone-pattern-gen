@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Geist Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+    background: #000;
+    color: #ededed;
+    min-height: 100vh;
+    font-size: 13px;
+}
+
+.app {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    height: 100vh;
+}
+
+/* ─── Sidebar ──────────────────────────────── */
+.sidebar {
+    background: #000;
+    border-right: 1px solid #252525;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.sidebar::-webkit-scrollbar { width: 8px; }
+.sidebar::-webkit-scrollbar-track { background: #000; }
+.sidebar::-webkit-scrollbar-thumb { background: #252525; border-radius: 4px; }
+.sidebar::-webkit-scrollbar-thumb:hover { background: #333; }
+
+.logo {
+    font-size: 13px;
+    font-weight: 500;
+    color: #ededed;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+}
+
+.logo-sub {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 32px;
+}
+
+/* ─── Sections ─────────────────────────────── */
+.section {
+    margin-bottom: 32px;
+}
+
+.section-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
+/* ─── Controls ─────────────────────────────── */
+.control {
+    margin-bottom: 16px;
+}
+
+.control-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.control-label {
+    font-size: 13px;
+    color: #ededed;
+}
+
+.control-value {
+    font-size: 13px;
+    color: #ff3c00;
+}
+
+/* ─── Range Sliders ────────────────────────── */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    background: #252525;
+    border-radius: 1px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: #ff3c00;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: #ff3c00;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* ─── Buttons ──────────────────────────────── */
+.btn-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #252525;
+    background: transparent;
+    color: #ededed;
+    font-family: inherit;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    border-color: #333;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.btn-primary {
+    background: #ededed;
+    border-color: #ededed;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background: #fff;
+}
+
+.btn-small {
+    padding: 8px 10px;
+    font-size: 12px;
+}
+
+.btn-accent {
+    background: #ff3c00;
+    border-color: #ff3c00;
+    color: #fff;
+}
+
+.btn-accent:hover {
+    background: #e63600;
+    border-color: #e63600;
+}
+
+/* ─── Select Groups ────────────────────────── */
+.select-group {
+    display: flex;
+    gap: 0;
+    margin-bottom: 16px;
+    border: 1px solid #252525;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.select-option {
+    flex: 1;
+    padding: 8px 8px;
+    border: none;
+    border-right: 1px solid #252525;
+    background: transparent;
+    color: #666;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s ease;
+}
+
+.select-option:last-child {
+    border-right: none;
+}
+
+.select-option.active {
+    background: rgba(255, 60, 0, 0.08);
+    color: #ff3c00;
+}
+
+.select-option:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.02);
+    color: #999;
+}
+
+/* ─── Color Pickers ────────────────────────── */
+.color-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.color-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid #252525;
+    cursor: pointer;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.color-swatch input[type="color"] {
+    width: 48px;
+    height: 48px;
+    border: none;
+    cursor: pointer;
+    margin: -8px;
+}
+
+.color-label {
+    font-size: 13px;
+    color: #666;
+}
+
+/* ─── Toggles ─────────────────────────────── */
+.toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.toggle-label {
+    font-size: 13px;
+    color: #ededed;
+}
+
+.toggle {
+    width: 36px;
+    height: 20px;
+    background: #252525;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s;
+}
+
+.toggle.active {
+    background: #ff3c00;
+}
+
+.toggle::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #ededed;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.2s;
+}
+
+.toggle.active::after {
+    transform: translateX(16px);
+    background: #fff;
+}
+
+/* ─── Dimension Inputs ─────────────────────── */
+.dimensions-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.dim-input {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.dim-input label {
+    font-size: 12px;
+    color: #666;
+}
+
+.dim-input input {
+    width: 100%;
+    padding: 8px 12px;
+    background: transparent;
+    border: 1px solid #252525;
+    color: #ededed;
+    font-family: inherit;
+    font-size: 13px;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.dim-input input:focus {
+    border-color: #ff3c00;
+}
+
+/* ─── Hints ────────────────────────────────── */
+.hint {
+    font-size: 12px;
+    color: #444;
+    margin-top: -10px;
+    margin-bottom: 16px;
+}
+
+/* ─── Canvas Area ──────────────────────────── */
+.canvas-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+}
+
+.canvas-wrapper {
+    position: relative;
+}
+
+canvas {
+    display: block;
+}
+
+.info-bar {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 12px;
+    color: #333;
+    display: flex;
+    gap: 16px;
+}
+
+.processing-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #ff3c00;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.processing-overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ─── Footer ───────────────────────────────── */
+.seed-footer {
+    font-size: 12px;
+    color: #333;
+    padding-top: 16px;
+    border-top: 1px solid #252525;
+    margin-top: auto;
+}
+
+.seed-footer span {
+    color: #ff3c00;
+}
+
+/* ─── Conditional Visibility ───────────────── */
+.conditional { display: none; }
+.conditional.visible { display: block; }
