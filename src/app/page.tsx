@@ -170,6 +170,20 @@ export default function Home() {
     setSeed(s);
   };
 
+  const handleReset = () => {
+    setSeed(500); setPatternType("halftone"); setRenderMode("stepped");
+    setShape("line"); setSourceMode("noise"); setNoiseType("perlin");
+    setScale(3); setContrast(1); setBrightness(0); setWarpAmount(1.5);
+    setGradDir(0); setGradStart(0); setGradEnd(100); setGradCurve(1);
+    setBlendMix(0.5); setBlendMode("multiply");
+    setFrequency(40); setAngle(90); setThickness(1); setCellSize(2);
+    setMaskEnabled(false); setMaskScale(1); setMaskThreshold(0.45);
+    setMaskSoftness(0.1); setMaskVertBias(0.5); setMaskEdgeFade(0.3);
+    setFgColor("#ff0000"); setBgColor("#c8c0b8");
+    setInvert(false); setTransparent(false);
+    setCanvasW(1200); setCanvasH(800);
+  };
+
   const showNoise = sourceMode === "noise" || sourceMode === "both";
   const showGradient = sourceMode === "gradient" || sourceMode === "both";
   const showBlend = sourceMode === "both";
@@ -198,6 +212,7 @@ export default function Home() {
           <div className="hint">Unique pattern fingerprint</div>
           <div className="btn-row">
             <button className="btn btn-accent" onClick={handleRandomize}>↻ Random</button>
+            <button className="btn" onClick={handleReset}>↺ Reset</button>
           </div>
         </div>
 
