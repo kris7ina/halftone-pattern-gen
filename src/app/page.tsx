@@ -38,7 +38,7 @@ export default function Home() {
   const [maskVertBias, setMaskVertBias] = useState(0.5);
   const [maskEdgeFade, setMaskEdgeFade] = useState(0.3);
 
-  const [fgColor, setFgColor] = useState("#ff0000");
+  const [fgColor, setFgColor] = useState("#FF3D00");
   const [bgColor, setBgColor] = useState("#c8c0b8");
   const [invert, setInvert] = useState(false);
   const [transparent, setTransparent] = useState(false);
@@ -179,7 +179,7 @@ export default function Home() {
     setFrequency(40); setAngle(90); setThickness(1); setCellSize(2);
     setMaskEnabled(false); setMaskScale(1); setMaskThreshold(0.45);
     setMaskSoftness(0.1); setMaskVertBias(0.5); setMaskEdgeFade(0.3);
-    setFgColor("#ff0000"); setBgColor("#c8c0b8");
+    setFgColor("#FF3D00"); setBgColor("#c8c0b8");
     setInvert(false); setTransparent(false);
     setCanvasW(1200); setCanvasH(800);
   };
@@ -211,8 +211,8 @@ export default function Home() {
           </div>
           <div className="hint">Unique pattern fingerprint</div>
           <div className="btn-row">
-            <button className="btn btn-accent" onClick={handleRandomize}>↻ Random</button>
-            <button className="btn" onClick={handleReset}>↺ Reset</button>
+            <button className="btn btn-accent" onClick={handleRandomize}>Random</button>
+            <button className="btn" onClick={handleReset}>Reset</button>
           </div>
         </div>
 
