@@ -49,6 +49,10 @@ body {
     margin-bottom: 32px;
 }
 
+.section > *:last-child {
+    margin-bottom: 0;
+}
+
 .section-title {
     font-size: 13px;
     font-weight: 500;
